@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job: one
+  cost_code: MyString
+  description: MyString
+  type: 
+  subcontractor: MyString
+  contract_no: MyString
+  description: MyString
+  project_name: MyString
+  document_type: MyString
+  link_contract: MyString
+  governing_contract: MyString
+  vendor: MyString
+  vendor_prequalified: MyString
+  required_documentation: MyString
+  legal_name: MyString
+  address: MyString
+  authorized_agent_1: MyString
+  authorized_agent_2: MyString
+  workers: MyString
+  compensation: MyString
+  bond_requirement: MyString
+  default_retainage: MyString
+  insurance_type: MyString
+
+two:
+  job: two
+  cost_code: MyString
+  description: MyString
+  type: 
+  subcontractor: MyString
+  contract_no: MyString
+  description: MyString
+  project_name: MyString
+  document_type: MyString
+  link_contract: MyString
+  governing_contract: MyString
+  vendor: MyString
+  vendor_prequalified: MyString
+  required_documentation: MyString
+  legal_name: MyString
+  address: MyString
+  authorized_agent_1: MyString
+  authorized_agent_2: MyString
+  workers: MyString
+  compensation: MyString
+  bond_requirement: MyString
+  default_retainage: MyString
+  insurance_type: MyString

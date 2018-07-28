@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_015442) do
+ActiveRecord::Schema.define(version: 2018_07_28_045757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "documents", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "job_no"
+    t.string "name"
+    t.string "address"
+    t.string "job_type"
+    t.string "administrator"
+    t.string "px"
+    t.string "pm"
+    t.string "gs"
+    t.string "warranty_period"
+    t.string "textura"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "scopes", force: :cascade do |t|
+    t.bigint "job_id"
+    t.string "cost_code"
+    t.string "description"
+    t.string "scope_type"
+    t.string "subcontractor"
+    t.string "contract_no"
+    t.string "project_name"
+    t.string "document_type"
+    t.string "link_contract"
+    t.string "governing_contract"
+    t.string "vendor"
+    t.string "vendor_prequalified"
+    t.string "required_documentation"
+    t.string "legal_name"
+    t.string "address"
+    t.string "authorized_agent_1"
+    t.string "authorized_agent_2"
+    t.string "workers"
+    t.string "compensation"
+    t.string "bond_requirement"
+    t.string "default_retainage"
+    t.string "insurance_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_scopes_on_job_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +81,5 @@ ActiveRecord::Schema.define(version: 2018_07_27_015442) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "scopes", "jobs"
 end
