@@ -12,9 +12,19 @@
  *
  */
 
+@import "variables";
 @import "font-awesome";
 @import "bootstrap";
+@import "trix";
 
-a {
-	color:black;
+
+.theme-container {
+	padding: 0 $desktop-left-right-spacing;
 }
+@media (min-width: $mobile-breakpoint){
+	.theme-container {
+	    padding: 0 $mobile-left-right-spacing;
+	}
+}
+/**/
+/*$mobile-left-right-spacing*/

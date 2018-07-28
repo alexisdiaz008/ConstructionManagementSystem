@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-	# devise_for :users, :controllers => {:sessions => "users/sessions"}
-	# resources :user
+	devise_for :users, :controllers => {:sessions => "users/sessions"}
+	resources :user
 
 	# get 'dashboard', to: 'pages#dashboard' , as: 'dashboard'
 	
