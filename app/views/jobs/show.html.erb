@@ -1,0 +1,26 @@
+<div class="theme-container">
+  <h2 class="row underline"><%= @job.name.capitalize %></h2>
+  <%= link_to "ADD A NEW SCOPE", new_job_scope_path(job_id: @job), class:"fa fa-plus", style:"margin:2rem 0;"%>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">COST-CODE</th>
+        <th scope="col">SUBCONTRACTOR</th>
+        <th scope="col">CONTRACT NO</th>
+        <th scope="col">DESCRIPTION</th>
+        <th scope="col">TYPE</th>
+      </tr>
+    </thead>
+    <tbody>
+  		<% @job.scopes.each do |scope| %>
+  	    <tr>
+  	      <td><%= scope.cost_code %></td>
+  	      <td><%= scope.subcontractor %></td>
+  	      <td><%= scope.contract_no %></td>
+  	      <td><%= scope.description %></td>
+  	      <td><%= scope.scope_type %></td>
+  	    </tr>
+  		<% end %>
+    </tbody>
+  </table>
+</div>

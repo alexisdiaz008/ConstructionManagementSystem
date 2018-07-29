@@ -1,0 +1,19 @@
+<div class="theme-container">
+	<h2 class="row underline"><%= @job.name.capitalize %></h2>
+	<div class="row">
+		<div class="col-md-6">
+			<%= form_for([@job, @scope]) do |f|%>
+				<% Scope.column_names[2..-3].each do |a| %>
+					<div class="field row">
+						<div class="col-md-5"><%= f.label a.to_sym, class:"pull-right"%></div>
+						<div class="col-md-7"><%= f.text_field a.to_sym, class: "form-control", placeholder:a.gsub('_',' ').capitalize %></div>
+					</div>
+				<% end %>
+				<%= f.submit "Save", class:"btn btn-primary pull-right m-3" %>
+			<% end %>
+		</div>
+		<div class="col-md-6">
+			<div class="h4 pull-right">REQUIRED UPLOADS:</div>
+		</div>
+	</div>
+</div>

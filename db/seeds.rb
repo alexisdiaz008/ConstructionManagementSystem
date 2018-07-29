@@ -8,6 +8,7 @@
 
 #  bundle exec rake db:drop db:create db:migrate db:seed
 
+u= User.create(email:"hey@me.com", password:"asdfasdf")
 10.times do 
 	job=Job.create(job_no: "#{rand(10 ** 2).to_s.rjust(2,'0')+'-'+rand(10 ** 5).to_s.rjust(5,'0') }",name: Faker::Address.community, address: Faker::Address.full_address, job_type: ["Hotel", "Condo", "Home", "Resort", "Casino", "Commercial"].sample, administrator: Faker::FunnyName.name_with_initial)
 	20.times do 

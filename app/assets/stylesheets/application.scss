@@ -17,7 +17,13 @@
 @import "bootstrap";
 @import "trix";
 
-
+/*GENERAL*/
+a {
+	text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
 .theme-container {
 	padding: 0 $desktop-left-right-spacing;
 }
@@ -26,5 +32,28 @@
 	    padding: 0 $mobile-left-right-spacing;
 	}
 }
-/**/
-/*$mobile-left-right-spacing*/
+.underline {
+	border-bottom: 1px black solid;
+}
+
+/*FORMS*/
+.field {
+	margin: 1rem 0;
+}
+.fa-plus:before {
+  margin: 1rem;
+}
+/*HEADER*/
+.header .row div {
+	text-align: center;
+}
+.header-text {
+	font-size: 2rem;
+}
+.header-links {
+  padding: 2rem;
+}
+
+.header-logo{
+	width: 100%;	
+}

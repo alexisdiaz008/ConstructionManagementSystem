@@ -1,0 +1,39 @@
+<div class="header theme-container">
+	<div class="row underline">
+		<div class="col-md-3">
+			<%= image_tag('coastal.png', class:"header-logo") %>
+		</div>
+		<% if user_signed_in? %>
+			<div class="col-md-6">
+				<div style="padding: 1rem;">
+					<%= link_to "Dashboard", root_path, class:"header-text"%>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="header-links">
+					<%= "Hello, #{current_user.email} "%><%= link_to "(Log Out)", destroy_user_session_path, :method => :delete, class:"pull-right"%>
+				</div>
+			</div>
+		<% else %>
+			<div class="col-md-9">
+				<div class="header-links">
+					<%= link_to "Sign up", new_user_registration_path, class:"pull-right", style:"margin:0 1rem;" %>
+					<%= link_to "Log in", new_user_session_path, class:"pull-right", style:"margin:0 1rem;" %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+			<%= link_to "New Job", new_job_path, class:"pull-left"%>
+		</div>
+		<div class="col-md-2">
+			<%= link_to "Search Scopes", new_job_path, class:"pull-left"%>
+		</div>
+		<div class="col-md-2">
+			<%= link_to "Settings", new_job_path, class:"pull-left"%>
+		</div>
+	</div>
+	<%= render 'layouts/alerts' %>
+</div>
+

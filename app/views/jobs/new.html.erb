@@ -1,0 +1,14 @@
+<div class="theme-container">
+	<h2 class="row underline">Create New Job</h2>
+	<div class="col-md-6 offset-md-2">
+		<%= form_for(@job) do |f|%>
+			<% Job.column_names[1..-3].each do |a| %>
+				<div class="field row">
+					<div class="col-md-5"><%= f.label a.to_sym, class:"pull-right"%></div>
+					<div class="col-md-7"><%= f.text_field a.to_sym, class: "form-control", placeholder:a.gsub('_',' ').capitalize %></div>
+				</div>
+			<% end %>
+			<%= f.submit "Save", class:"btn btn-primary pull-right m-3" %>
+		<% end %>
+	</div>
+</div>
